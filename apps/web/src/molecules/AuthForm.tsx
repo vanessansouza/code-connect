@@ -1,4 +1,4 @@
-import { FormEvent } from 'react'
+import type { FormEvent } from 'react'
 import { Button } from '../atoms/Button'
 import { Checkbox } from '../atoms/Checkbox'
 import { Input } from '../atoms/Input'

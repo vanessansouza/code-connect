@@ -25,8 +25,8 @@ export function AuthCard({
       <aside className="auth-card__aside">
         <AuthBanner
           bannerSrc={bannerSrc}
-          title="Bem-vindas"
-          subtitle="Sua jornada começa com código e conexões reais."
+          title={headline}
+          subtitle={description}
         />
       </aside>
       <div className="auth-card__content">
