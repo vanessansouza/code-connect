@@ -27,11 +27,16 @@ export function LoginPage() {
     <main className="page page--auth">
       <AuthCard
         bannerSrc="/banner.png"
-        headline="Bem-vindas"
-        description="Conecte-se com a sua próxima oportunidade de código."
+        bannerTitle="Bem-vindas"
+        bannerSubtitle="Conecte-se com a sua próxima oportunidade de código."
         fields={loginFields}
         buttonLabel="Login"
         socialLinks={socialLinks}
+        headerLabel="Login"
+        heading="Boas-vindas! Faça seu login."
+        showRemember
+        showForgotPassword
+        mode="login"
       />
     </main>
   )

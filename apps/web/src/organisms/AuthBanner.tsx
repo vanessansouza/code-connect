@@ -1,18 +1,31 @@
 interface AuthBannerProps {
   bannerSrc: string
-  title: string
-  subtitle: string
+  title?: string
+  subtitle?: string
 }
 
 export function AuthBanner({ bannerSrc, title, subtitle }: AuthBannerProps) {
+  const showOverlay = Boolean(title || subtitle)
+
   return (
-    <div className="auth-banner">
-      <img className="auth-banner__image" src={bannerSrc} alt="Banner" />
-      <div className="auth-banner__overlay">
-        <p className="auth-banner__eyebrow">code connect</p>
-        <h2 className="auth-banner__title">{title}</h2>
-        <p className="auth-banner__subtitle">{subtitle}</p>
-      </div>
+    <div className="relative grid h-full min-h-[32rem] overflow-hidden bg-[#0B1220]">
+      <img
+        className="h-full w-full object-cover"
+        src={bannerSrc}
+        alt="Banner"
+        width={1344}
+        height={896}
+        loading="eager"
+        fetchPriority="high"
+        style={{ aspectRatio: '3 / 2' }}
+      />
+      {showOverlay ? (
+        <div className="absolute inset-6 flex flex-col justify-end gap-4 text-white">
+          <p className="text-xs uppercase tracking-[0.25em] opacity-90">code connect</p>
+          {title ? <h2 className="text-3xl font-semibold leading-tight">{title}</h2> : null}
+          {subtitle ? <p className="max-w-xs text-sm opacity-90">{subtitle}</p> : null}
+        </div>
+      ) : null}
     </div>
   )
 }
